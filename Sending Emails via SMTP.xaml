@@ -35,10 +35,11 @@
       <x:String>UiPath.Shared.Activities.Business</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="42">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="84">
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -74,9 +75,21 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sending_Emails__SMTP" sap:VirtualizedContainerService.HintSize="912.0000000000001,1383.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sending_Emails__SMTP" sap:VirtualizedContainerService.HintSize="763.2,1557.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:PasswordCredentials" Name="GmailCredential" />
       <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(of string)]" Name="AttachmentsList" />
@@ -88,6 +101,7 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message start" sap:VirtualizedContainerService.HintSize="483.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Starting flow Send email via SMTP&quot;]" />
     <uas:GetUsernamePasswordX OrchestratorCredentialName="{x:Null}" TimeoutInSeconds="{x:Null}" AutosubmitTimeoutSeconds="10" Credential="[GmailCredential]" CredentialName="UiPath: GmailCredentials" CredentialsSource="CredentialsManager" DisplayName="Get Username/Password for logging in to GMAIL" sap:VirtualizedContainerService.HintSize="483.2,206.4" sap2010:WorkflowViewState.IdRef="GetUsernamePasswordX_1" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="483.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;change misuk projects&quot;]" />
     <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="&#xA;sending an email with a single PDF document as attachment&#xA;" Body="Hello. This is a test email with a single attachment. Your friendly neighbourhood robot." DisplayName="Send SMTP Mail Message single document" Email="uipath.emailautomation@gmail.com" EnableSSL="True" From="uipath.emailautomation@gmail.com" sap:VirtualizedContainerService.HintSize="483.2,256.8" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="[GmailCredential.Password]" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Single att subject" To="uipath.emailautomation@gmail.com">
       <ui:SendMail.Files>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
